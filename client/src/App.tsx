@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/bigRocket.png'
 import snakeLogo from './assets/Snake.png'
+import { Gameboard } from './presentation/gameboard'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showgame, setShowgame] = useState(false)
+
+  if (showgame) {
+    return(<Gameboard />)
+  }
 
   return (
     <>
@@ -19,16 +24,10 @@ function App() {
           <img src={snakeLogo} className="snakeLogo" alt="Snake logo" />
         </a>
       <div className="snakeLogo"> 
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setShowgame(true)}>
+          Start Game
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
