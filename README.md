@@ -36,7 +36,7 @@
 
 ### phase 1
 
-- project initialized
+✅ project initialized
 - game initialized
   - scoreboard (# of apples eaten)
   - game state
