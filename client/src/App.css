@@ -3,10 +3,40 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --border-size: 5px;
+  --border-angle: 0turn;
+  width: 60vmin;
+  height: 80vmin;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
 
 .logo {
-  height: 6em;
+  height: 8em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -14,7 +44,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+.snakeLogo:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
@@ -28,9 +58,13 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+.snakeLogo {
+  height: 8em;
 }
 
 .card {
@@ -39,4 +73,14 @@
 
 .read-the-docs {
   color: #888;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
