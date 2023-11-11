@@ -8,7 +8,7 @@ function Gameboard() {
 
     context.fillStyle = "purple";
     context.fillRect(10, 10, 150, 100);
-  });
+  }, []);
 
   return <canvas id="gameboard" />;
 }
